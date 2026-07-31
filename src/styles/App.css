@@ -89,12 +89,22 @@ h1 {
   font-size: 1rem;
   transition: all 0.3s ease;
   background: white;
+  font-family: inherit;
 }
 
 .form-input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 60px;
 }
 
 .btn-submit {
