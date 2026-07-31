@@ -6,21 +6,16 @@ function App() {
     alert('Button clicked successfully!');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Form submitted successfully!');
-  };
-
   return (
     <div className="app-container">
       <h1>🔧 JSX Keyword Replacement Challenge</h1>
       <p className="subtitle">All JSX errors have been fixed!</p>
 
-      {/* Fixed: class → className, for → htmlFor, onclick → onClick */}
       <div className="form-section">
         <h2>📝 Contact Form</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form className="contact-form">
           <div className="form-group">
+            {/* Fixed: for → htmlFor */}
             <label htmlFor="name">Name:</label>
             <input 
               type="text" 
@@ -31,6 +26,7 @@ function App() {
           </div>
 
           <div className="form-group">
+            {/* Fixed: for → htmlFor */}
             <label htmlFor="email">Email:</label>
             <input 
               type="email" 
@@ -41,6 +37,7 @@ function App() {
           </div>
 
           <div className="form-group">
+            {/* Fixed: for → htmlFor */}
             <label htmlFor="message">Message:</label>
             <textarea 
               id="message" 
@@ -50,8 +47,9 @@ function App() {
             />
           </div>
 
+          {/* Fixed: onclick → onClick */}
           <button 
-            type="submit" 
+            type="button" 
             className="btn-submit"
             onClick={handleClick}
           >
@@ -60,19 +58,17 @@ function App() {
         </form>
       </div>
 
-      {/* Fixed: class → className */}
       <div className="info-section">
         <h3>✅ Fixed Issues:</h3>
         <ul className="fix-list">
-          <li>✅ <span className="highlight">class</span> → <span className="highlight">className</span></li>
-          <li>✅ <span className="highlight">for</span> → <span className="highlight">htmlFor</span></li>
-          <li>✅ <span className="highlight">onclick</span> → <span className="highlight">onClick</span></li>
-          <li>✅ All JSX attributes now follow camelCase convention</li>
+          <li>✅ <span className="highlight">class</span> → <span className="highlight">className</span> (3 places)</li>
+          <li>✅ <span className="highlight">for</span> → <span className="highlight">htmlFor</span> (3 places)</li>
+          <li>✅ <span className="highlight">onclick</span> → <span className="highlight">onClick</span> (1 place)</li>
         </ul>
       </div>
 
       <div className="footer">
-        <p>💡 Remember: JSX uses camelCase for attributes (className, onClick, htmlFor)</p>
+        <p>💡 Remember: JSX uses camelCase for attributes</p>
       </div>
     </div>
   );
