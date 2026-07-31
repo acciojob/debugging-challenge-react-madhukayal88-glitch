@@ -3,12 +3,12 @@ import './styles.css';
 
 function App() {
   const handleClick = () => {
-    alert('Button clicked!');
+    alert('Button clicked successfully!');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Form submitted!');
+    alert('Form submitted successfully!');
   };
 
   return (
@@ -16,7 +16,7 @@ function App() {
       <h1>🔧 JSX Keyword Replacement Challenge</h1>
       <p className="subtitle">All JSX errors have been fixed!</p>
 
-      {/* Fixed: class → className, for → htmlFor */}
+      {/* Fixed: class → className, for → htmlFor, onclick → onClick */}
       <div className="form-section">
         <h2>📝 Contact Form</h2>
         <form onSubmit={handleSubmit} className="contact-form">
@@ -40,7 +40,16 @@ function App() {
             />
           </div>
 
-          {/* Fixed: onclick → onClick */}
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea 
+              id="message" 
+              placeholder="Enter your message" 
+              className="form-input"
+              rows="3"
+            />
+          </div>
+
           <button 
             type="submit" 
             className="btn-submit"
