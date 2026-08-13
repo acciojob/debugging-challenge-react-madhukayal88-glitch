@@ -16,36 +16,24 @@ function App() {
   };
 
   return (
-    // FIX: Changed 'class' to 'className'
-    <div className="container">
-      <header className="header">
+    <div className="App">
+      <header className="App-header">
         <h1>JSX Keyword Replacement Challenge</h1>
-      </header>
-
-      <main className="content">
         <form onSubmit={handleSubmit}>
-          {/* FIX: Changed 'for' to 'htmlFor' */}
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
             name="username"
-            // FIX: Changed 'onchange' to 'onChange'
             onChange={handleChange}
-            // FIX: Changed 'autocomplete' to 'autoComplete'
             autoComplete="off"
           />
 
-          {/* FIX: Changed 'onclick' to 'onClick' */}
-          <button type="button" onClick={handleClick} className="btn">
-            Click Me
-          </button>
-
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn" onClick={handleClick}>
             Submit
           </button>
         </form>
-      </main>
+      </header>
     </div>
   );
 }
