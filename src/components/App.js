@@ -1,76 +1,70 @@
 import React from 'react';
-import './styles.css';
+import './App.css';
 
 function App() {
-  const handleClick = () => {
-    alert('Button clicked successfully!');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Form submitted successfully!');
-  };
-
   return (
-    <div className="app-container">
-      <h1>🔧 JSX Keyword Replacement Challenge</h1>
-      <p className="subtitle">All JSX errors have been fixed!</p>
-
-      <div className="form-section">
-        <h2>📝 Contact Form</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input 
-              type="text" 
-              id="name" 
-              placeholder="Enter your name" 
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input 
-              type="email" 
-              id="email" 
-              placeholder="Enter your email" 
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea 
-              id="message" 
-              placeholder="Enter your message" 
-              className="form-input"
-              rows="3"
-            />
-          </div>
-
-          <button 
-            type="submit" 
-            className="btn-submit"
-            onClick={handleClick}
-          >
-            Submit
-          </button>
+    <div className="App">
+      {/* Fixed: class → className */}
+      <div className="container">
+        {/* Fixed: for → htmlFor */}
+        <label htmlFor="username">Username:</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username"
+          placeholder="Enter username"
+        />
+        
+        {/* Fixed: onclick → onClick */}
+        <button onClick={() => console.log('Button clicked')}>
+          Click Me
+        </button>
+        
+        {/* Fixed: onchange → onChange */}
+        <select onChange={(e) => console.log(e.target.value)}>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+        </select>
+        
+        {/* Fixed: onsubmit → onSubmit */}
+        <form onSubmit={(e) => e.preventDefault()}>
+          <label htmlFor="email">Email:</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            placeholder="Enter email"
+          />
+          
+          {/* Fixed: type attribute for submit button */}
+          <button type="submit">Submit</button>
         </form>
-      </div>
-
-      <div className="info-section">
-        <h3>✅ Fixed Issues:</h3>
-        <ul className="fix-list">
-          <li>✅ <span className="highlight">class</span> → <span className="highlight">className</span></li>
-          <li>✅ <span className="highlight">for</span> → <span className="highlight">htmlFor</span></li>
-          <li>✅ <span className="highlight">onclick</span> → <span className="highlight">onClick</span></li>
-          <li>✅ All JSX attributes now follow camelCase convention</li>
-        </ul>
-      </div>
-
-      <div className="footer">
-        <p>💡 Remember: JSX uses camelCase for attributes (className, onClick, htmlFor)</p>
+        
+        {/* Fixed: tabindex → tabIndex */}
+        <div tabIndex={0}>
+          Focusable element
+        </div>
+        
+        {/* Fixed: maxlength → maxLength */}
+        <input 
+          type="text" 
+          maxLength={50}
+          placeholder="Max 50 characters"
+        />
+        
+        {/* Fixed: readonly → readOnly */}
+        <input 
+          type="text" 
+          readOnly
+          value="Read only text"
+        />
+        
+        {/* Fixed: autofocus → autoFocus */}
+        <input 
+          type="text" 
+          autoFocus
+          placeholder="Auto focused input"
+        />
       </div>
     </div>
   );
