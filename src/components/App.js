@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [inputValue, setInputValue] = useState('');
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Submitted value: ${inputValue}`);
   };
@@ -19,7 +19,7 @@ function App() {
         <h1>JSX Keyword Replacement Challenge</h1>
       </header>
 
-      <form onSubmit={handleClick} className="form-group">
+      <form onSubmit={handleSubmit} className="form-group">
         <label htmlFor="user-input">Enter Text:</label>
         <input
           type="text"
@@ -28,10 +28,10 @@ function App() {
           value={inputValue}
           onChange={handleChange}
           autoComplete="off"
-          tabIndex="0"
+          tabIndex={0}
         />
 
-        <button type="submit" onClick={handleClick} className="btn-submit">
+        <button type="submit" className="btn-submit">
           Submit
         </button>
       </form>
