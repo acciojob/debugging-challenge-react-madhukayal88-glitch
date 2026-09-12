@@ -1,40 +1,21 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from "react";
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Submitted value: ${inputValue}`);
-  };
-
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
+  const handleClick = () => {
+    alert("Button clicked!");
   };
 
   return (
     <div className="container">
-      <header className="header">
-        <h1>JSX Keyword Replacement Challenge</h1>
-      </header>
+      <h1>JSX Keyword Replacement Challenge</h1>
 
-      <form onSubmit={handleSubmit} className="form-group">
-        <label htmlFor="user-input">Enter Text:</label>
-        <input
-          type="text"
-          id="user-input"
-          className="input-field"
-          value={inputValue}
-          onChange={handleChange}
-          autoComplete="off"
-          tabIndex={0}
-        />
+      <label htmlFor="name">Name:</label>
+      <input id="name" type="text" placeholder="Enter your name" />
 
-        <button type="submit" className="btn-submit">
-          Submit
-        </button>
-      </form>
+      <br />
+      <br />
+
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 }
