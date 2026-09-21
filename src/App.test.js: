@@ -1,0 +1,8 @@
+import { render, screen } from '@testing-library/react';
+import App from './App';    // ← imports from src/App.js
+
+test('renders JSX keyword replacement challenge', () => {
+  render(<App />);
+  const heading = screen.getByText(/JSX Keyword Replacement Challenge/i);
+  expect(heading).toBeInTheDocument();
+});
